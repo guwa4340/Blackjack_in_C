@@ -1,0 +1,29 @@
+#! /bin/bash
+
+run (){
+  echo "$*"
+  if $*
+  then echo 'success'
+  else echo 'error'
+  fi
+}
+
+run ./runblackjack.c <<EOF
+H 
+S
+EOF
+
+run ./runblackjack.c <<EOF
+S
+EOF
+
+run ./runblackjack.c<<EOF
+NULL INPUT
+S
+EOF
+
+run ./runblackjack <<EOF
+NULL INPUT
+H
+S
+EOF
